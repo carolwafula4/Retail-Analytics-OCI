@@ -1,125 +1,128 @@
-# Retail Analytics API with PostgreSQL Optimization using Oracle Cloud Infrastructure (OCI)
+Retail Analytics System
+Overview
 
-## Project Overview
+The Retail Analytics System is a database-driven application developed as part of the BCS 4103 – Advanced Database Systems unit at St. Paul's University Nairobi.
 
-This project is a Retail Analytics System developed using Node.js, Express.js, PostgreSQL, and Oracle Cloud Infrastructure (OCI). It provides RESTful APIs for managing retail data and demonstrates database optimization techniques through stored procedures, triggers, and query performance analysis.
+The project demonstrates how PostgreSQL can be used to store, manage and analyze retail transaction data while following good database design principles. The application uses Node.js, Express.js, and PostgreSQL to provide RESTful APIs for interacting with retail data.
 
----
+Objectives
 
-## Objectives
+The system aims to:
 
-- Develop a RESTful API using Node.js and Express.js.
-- Connect the application to a PostgreSQL database.
-- Implement CRUD operations for retail products.
-- Optimize database performance using indexes and EXPLAIN ANALYZE.
-- Implement stored procedures and triggers.
-- Prepare the application for deployment on Oracle Cloud Infrastructure (OCI).
+Store retail transaction records efficiently
+Organize customer, product and invoice information
+Demonstrate database normalization
+Provide REST APIs for data access
+Implement transaction management using PostgreSQL
+Demonstrate database security best practices
+Technologies Used
+PostgreSQL
+Node.js
+Express.js
+pg (PostgreSQL Driver)
+Postman
+Visual Studio Code
+Git & GitHub
 
----
+Database Structure
 
-## Technologies Used
+The project contains the following tables:
 
-- Node.js
-- Express.js
-- PostgreSQL
-- pgAdmin 4
-- Postman
-- Oracle Cloud Infrastructure (OCI)
+retail_raw_data
+customers
+products
+invoices
+invoiceitems
+productaudit
 
----
+These tables are connected using primary keys and foreign keys to reduce redundancy and maintain data integrity.
 
-## Project Structure
+Features
+Import retail transaction data
+Customer management
+Product management
+Invoice management
+Invoice item management
+Product audit logging
+RESTful API endpoints
+PostgreSQL transaction management
+Secure database connection using environment variables
 
-```
-RetailAnalytics-OCI
+Project Structure
+Retail-Analytics-OCI/
 │
-├── config
-├── controllers
-├── models
-├── routes
-├── scripts
-├── SQL
-│   ├── stored_procedures.sql
-│   ├── triggers.sql
-│   └── performance.sql
-├── Postman
-│   ├── RetailAnalytics_API.postman_collection.json
-│   └── RetailAnalytics.postman_environment.json
-├── package.json
+├── config/
+├── controllers/
+├── data/
+├── Documentation/
+├── models/
+├── Postman/
+├── routes/
+├── scripts/
+├── SQL/
+├── app.js
 ├── server.js
+├── package.json
 └── README.md
-```
 
----
+Installation
 
-## Database Tables
+Clone the repository
 
-- Customers
-- Products
-- Invoices
-- InvoiceItems
-- ProductAudit
+git clone https://github.com/carolwafula4/Retail-Analytics-OCI.git
 
----
+Install dependencies
 
-## API Endpoints
+npm install
 
-### Products
+Create a .env file and configure your PostgreSQL credentials.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | /products | Retrieve all products |
-| GET | /products/:stockcode | Retrieve one product |
-| POST | /products | Create a product |
-| PUT | /products/:stockcode | Update a product |
-| DELETE | /products/:stockcode | Delete a product |
+Example:
 
----
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD=your_password
+DB_NAME=RetailAnalytics
 
-## Stored Procedures
+Run the application
 
-- CalculateTotalSales
-- GetTopCustomers
-- GetMonthlySalesReport
+npm start
 
----
 
-## Trigger
+API Testing
 
-ProductAudit Trigger automatically records:
+The API endpoints can be tested using the Postman collection included in the project.
 
-- Product updates
-- Product deletions
+Database Security
 
----
+The project implements several PostgreSQL security practices, including:
+Environment variables for database credentials
+Parameterized SQL queries to prevent SQL injection
+User authentication
+Audit logging
+Transaction management
 
-## Performance Optimization
+Documentation
+The project report is available in the Documentation folder and includes:
 
-Database optimization includes:
+Database Design
+ERD
+Database Architecture
+Data Flow Analysis
+PostgreSQL Security Considerations
+Transaction Management
 
-- Primary Key Index
-- Description Index
-- EXPLAIN ANALYZE
-- Query performance evaluation
+Authors
 
----
+Group B:
+BSCNRB332125
+BOBITNRB494624
+BSCNRB501824
+BOBITNRB616624
+BSCNRB154723
 
-## Testing
+Academic Information
 
-The API was tested using Postman.
-
-Included:
-
-- CRUD operations
-- Success scenarios
-- Error scenarios
-- Invalid requests
-
----
-
-## Authors
-
-Group Project
-
-Module:
-PostgreSQL Database Optimization using Oracle Cloud Infrastructure (OCI)
+Institution: St. Paul's University Nairobi
+Unit: BCS 4103 – Advanced Database Systems
