@@ -1,14 +1,14 @@
 {
   "name": "retailanalytics-oci",
   "version": "1.0.0",
-  "description": "",
+  "description": "Retail Analytics System using Node.js, Express.js and PostgreSQL.",
   "main": "server.js",
 "scripts": {
   "start": "node server.js",
   "dev": "nodemon server.js"
 },
   "keywords": [],
-  "author": "",
+  "author": "Group B",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
